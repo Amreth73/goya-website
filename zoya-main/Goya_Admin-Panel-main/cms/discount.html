@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Product</title>
+    <link rel="stylesheet" href="discount.css" />
+    <link rel="stylesheet" href="pro_style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <style>
+    .container1 {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 600px;
+      margin-left: 600px;
+      margin-top: -600px;
+    }
+
+    .container1 h21 {
+      margin-bottom: 20px;
+      font-size: 1.5em;
+      color: #333;
+    }
+
+    .form-group1 {
+      margin-bottom: 20px;
+    }
+
+    .form-group1 label1 {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    .form-group1 input[type="text"],
+    .form-group1 select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+      color: #333;
+    }
+
+    .form-group1 input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    .radio-group1 {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .radio-group1 label {
+      display: flex;
+      align-items: center;
+      font-weight: normal;
+      color: #555;
+    }
+
+    .radio-group1 label1 input {
+      margin-right: 5px;
+    }
+
+    .form-actions1 {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .form-actions1 button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .form-actions1 .save1 {
+      background-color: #007bff;
+      color: white;
+    }
+    .form-group1 button {
+      background-color: #007bff;
+      font-weight: 600;
+    }
+
+    .form-actions1 .cancel1 {
+      background-color: #ffc107;
+      color: white;
+    }
+  </style>
+  <body>
+    <div class="up_nav">
+      <div class="upper">
+        <img src="images/goya(1).png" alt="logo" class="com_logo" />
+      </div>
+      <div class="upper2">
+        <div onclick="togglePopup()">
+          <a href="#alert" class="noti_icon"
+            ><i class="fa-regular fa-bell"></i
+          ></a>
+        </div>
+        <div class="user_icon" onclick="togglePopup()">
+          <h2>Ms</h2>
+        </div>
+      </div>
+    </div>
+    <div id="userPopup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="togglePopup()">&times;</span>
+        <p class="admin-name">John Doe</p>
+        <p>john.doe@example.com</p>
+        <button onclick="manageAccount()">Manage Account</button>
+        <button onclick="logout()">Logout</button>
+      </div>
+    </div>
+    <div class="container">
+      <aside class="sidebar">
+        <nav>
+          <ul>
+            <li>
+              <a href="home.html"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li>
+              <a href="create_orders.html"><i class="fas fa-box"></i> Orders</a>
+            </li>
+            <li class="has-sub-menu active">
+              <a href="manage_products.html"
+                ><i class="fas fa-tags"></i> Products</a
+              >
+            </li>
+            <li>
+              <a href="collections.html"
+                ><i class="fa-solid fa-boxes-stacked"></i>Collections</a
+              >
+            </li>
+            <li>
+              <a href="newinventory.html"
+                ><i class="fas fa-warehouse"></i> Inventory</a
+              >
+            </li>
+            <li>
+              <a href="gift_cards.html"
+                ><i class="fas fa-gift"></i> Gift Cards</a
+              >
+            </li>
+            <li>
+              <a href="discount.html"
+                ><i class="fas fa-percent"></i> Discounts</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+    <div class="container1">
+      <h21>Pricing</h21>
+      <br /><br />
+      <form>
+        <!-- Existing fields... -->
+
+        <!-- Discount Section -->
+        <h22>Discounts</h22>
+        <div class="form-group1">
+          <label1 for="discountCode1">Discount Code</label1>
+          <input
+            type="text"
+            id="discountCode1"
+            placeholder="Enter discount code"
+          />
+        </div>
+
+        <div class="form-group1">
+          <label1 for="productSelection1">Product Selection</label1>
+          <select id="productSelection1">
+            <option>Select a product</option>
+            <option>Electronics</option>
+          </select>
+        </div>
+
+        <div class="form-group1">
+          <label1 for="amountValue1">Amount Value</label1>
+          <input
+            type="text"
+            id="amountValue1"
+            placeholder="Enter amount value"
+          />
+        </div>
+
+        <div class="form-group1">
+          <button type="button" onclick="generateCoupon()">
+            Generate Coupon Code
+          </button>
+        </div>
+
+        <div class="form-group1">
+          <label1 for="validityFrom1">Validity Date (From)</label1>
+          <input type="date" id="validityFrom1" />
+          <label1 for="validityTo1">To</label1>
+          <input type="date" id="validityTo1" />
+        </div>
+
+        <div class="form-group1">
+          <label1 for="startTime1">Start Time</label1>
+          <input type="time" id="startTime1" />
+          <label1 for="endTime1">End Time</label1>
+          <input type="time" id="endTime1" />
+        </div>
+
+        <!-- Automatic Discount Section -->
+        <h22>Automatic Discount</h22>
+        <div class="form-group1">
+          <label1>Discount Type</label1>
+          <div class="radio-group1">
+            <label for="autoRadio1"
+              ><input
+                type="radio"
+                id="autoRadio1"
+                name="autoDiscountType1"
+                value="percentage"
+              />Percentage</label
+            >
+            <label for="autoRadio2"
+              ><input
+                type="radio"
+                id="autoRadio2"
+                name="autoDiscountType1"
+                value="amount"
+              />Amount</label
+            >
+          </div>
+        </div>
+
+        <!-- Percentage Basis Fields -->
+        <div class="form-group1" id="percentageFields" style="display: none">
+          <label1 for="maxValue1">Max Approve Value (Amount)</label1>
+          <input
+            type="text"
+            id="maxValue1"
+            placeholder="Enter max value in amount"
+          />
+
+          <div class="form-group1">
+            <input type="checkbox" id="minPurchaseCheckbox1" />
+            <label1 for="minPurchaseValue1">Minimum Purchase Value</label1>
+            <input
+              type="text"
+              id="minPurchaseValue1"
+              placeholder="Enter minimum purchase value"
+              disabled
+            />
+          </div>
+          <div class="form-group1">
+            <label1 for="percent">Percentage %</label1>
+            <input
+              type="text"
+              id="percent"
+              placeholder="Enter the percentage"
+            />
+          </div>
+        </div>
+
+        <!-- Amount Basis Fields -->
+        <div class="form-group1" id="amountFields" style="display: none">
+          <label1 for="amountDiscount1">Discount Amount</label1>
+          <input
+            type="text"
+            id="amountDiscount1"
+            placeholder="Enter discount amount"
+          />
+
+          <div class="form-group1">
+            <input type="checkbox" id="minPurchaseCheckbox2" />
+            <label1 for="minPurchaseValue2">Minimum Purchase Value</label1>
+            <input
+              type="text"
+              id="minPurchaseValue2"
+              placeholder="Enter minimum purchase value"
+              disabled
+            />
+          </div>
+          <!-- <div class="form-group1">
+            <label1 for="amt">Amount </label1>
+            <input type="text" id="amt" placeholder="Enter the Amount" />
+          </div> -->
+        </div>
+
+        <div class="form-group1">
+          <button type="button" onclick="generateAutoCoupon()">
+            Generate Coupon
+          </button>
+        </div>
+
+        <div class="form-group1">
+          <label1 for="autoValidityFrom1">Validity Date (From)</label1>
+          <input type="date" id="autoValidityFrom1" />
+          <label1 for="autoValidityTo1">To</label1>
+          <input type="date" id="autoValidityTo1" />
+        </div>
+
+        <div class="form-group1">
+          <label1 for="autoStartTime1">Start Time</label1>
+          <input type="time" id="autoStartTime1" />
+          <label1 for="autoEndTime1">End Time</label1>
+          <input type="time" id="autoEndTime1" />
+        </div>
+
+        <!-- Save and Cancel buttons -->
+        <div class="form-actions1">
+          <button type="submit" class="save1">Save changes</button>
+          <button type="button" class="cancel1">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      // Function to handle discount type change
+      document
+        .querySelectorAll('input[name="autoDiscountType1"]')
+        .forEach((elem) => {
+          elem.addEventListener("change", function () {
+            const percentageFields =
+              document.getElementById("percentageFields");
+            const amountFields = document.getElementById("amountFields");
+            if (this.value === "percentage") {
+              percentageFields.style.display = "block";
+              amountFields.style.display = "none";
+            } else if (this.value === "amount") {
+              percentageFields.style.display = "none";
+              amountFields.style.display = "block";
+            }
+          });
+        });
+
+      // Enable or disable minimum purchase value input based on checkbox
+      document
+        .getElementById("minPurchaseCheckbox1")
+        .addEventListener("change", function () {
+          document.getElementById("minPurchaseValue1").disabled = !this.checked;
+        });
+
+      document
+        .getElementById("minPurchaseCheckbox2")
+        .addEventListener("change", function () {
+          document.getElementById("minPurchaseValue2").disabled = !this.checked;
+        });
+
+      // Add functions to generate coupons and other related logic as needed
+      function generateCoupon() {
+        // Function to generate a random coupon code
+        function generateRandomCode(length) {
+          const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+          let result = "";
+          const charactersLength = characters.length;
+          for (let i = 0; i < length; i++) {
+            result += characters.charAt(
+              Math.floor(Math.random() * charactersLength)
+            );
+          }
+          return result;
+        }
+
+        // Generate a random code of length 10 (you can adjust as needed)
+        const couponCode = generateRandomCode(10);
+
+        // Set the generated code to the input field
+        document.getElementById("discountCode1").value = couponCode;
+      }
+
+      function generateAutoCoupon() {
+        // Implement automatic coupon generation logic
+      }
+    </script>
+
+    <script>
+      function updatePrice() {
+        // Get the base price value
+        const basePriceInput = document.getElementById("basePrice1");
+        let basePrice = parseFloat(basePriceInput.value);
+
+        // If base price is not a valid number, stop the function
+        if (isNaN(basePrice)) {
+          alert("Please enter a valid base price.");
+          return;
+        }
+
+        // Get the selected discount type
+        const discountType = document.querySelector(
+          'input[name="discountType1"]:checked'
+        ).value;
+
+        let finalPrice = basePrice;
+
+        if (discountType === "percentage") {
+          // Get the percentage value
+          const percentInput = document.getElementById("percent");
+          const percentage = parseFloat(percentInput.value);
+
+          if (isNaN(percentage) || percentage < 0) {
+            alert("Please enter a valid percentage.");
+            return;
+          }
+
+          finalPrice = basePrice - basePrice * (percentage / 100);
+        } else if (discountType === "fixedPrice") {
+          // Get the fixed discount amount
+          const amountDiscountInput =
+            document.getElementById("amountDiscount1");
+          const discountAmount = parseFloat(amountDiscountInput.value);
+
+          if (isNaN(discountAmount) || discountAmount < 0) {
+            alert("Please enter a valid discount amount.");
+            return;
+          }
+
+          finalPrice = basePrice - discountAmount;
+        }
+
+        // Update the base price input with the new price
+        basePriceInput.value = finalPrice.toFixed(2);
+      }
+    </script>
+
+    <script src="discount.js"></script>
+    <script src="pro_script.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
