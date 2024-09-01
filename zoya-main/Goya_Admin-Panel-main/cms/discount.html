@@ -17,9 +17,9 @@
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      width: 600px;
-      margin-left: 600px;
-      margin-top: -600px;
+      width: 100%;
+      margin-left: 275px;
+      margin-top: 60px;
     }
 
     .container1 h21 {
@@ -159,165 +159,165 @@
           </ul>
         </nav>
       </aside>
-    </div>
-    <div class="container1">
-      <h21>Pricing</h21>
-      <br /><br />
-      <form>
-        <!-- Existing fields... -->
+      <div class="container1">
+        <h21>Pricing</h21>
+        <br /><br />
+        <form>
+          <!-- Existing fields... -->
 
-        <!-- Discount Section -->
-        <h22>Discounts</h22>
-        <div class="form-group1">
-          <label1 for="discountCode1">Discount Code</label1>
-          <input
-            type="text"
-            id="discountCode1"
-            placeholder="Enter discount code"
-          />
-        </div>
-
-        <div class="form-group1">
-          <label1 for="productSelection1">Product Selection</label1>
-          <select id="productSelection1">
-            <option>Select a product</option>
-            <option>Electronics</option>
-          </select>
-        </div>
-
-        <div class="form-group1">
-          <label1 for="amountValue1">Amount Value</label1>
-          <input
-            type="text"
-            id="amountValue1"
-            placeholder="Enter amount value"
-          />
-        </div>
-
-        <div class="form-group1">
-          <button type="button" onclick="generateCoupon()">
-            Generate Coupon Code
-          </button>
-        </div>
-
-        <div class="form-group1">
-          <label1 for="validityFrom1">Validity Date (From)</label1>
-          <input type="date" id="validityFrom1" />
-          <label1 for="validityTo1">To</label1>
-          <input type="date" id="validityTo1" />
-        </div>
-
-        <div class="form-group1">
-          <label1 for="startTime1">Start Time</label1>
-          <input type="time" id="startTime1" />
-          <label1 for="endTime1">End Time</label1>
-          <input type="time" id="endTime1" />
-        </div>
-
-        <!-- Automatic Discount Section -->
-        <h22>Automatic Discount</h22>
-        <div class="form-group1">
-          <label1>Discount Type</label1>
-          <div class="radio-group1">
-            <label for="autoRadio1"
-              ><input
-                type="radio"
-                id="autoRadio1"
-                name="autoDiscountType1"
-                value="percentage"
-              />Percentage</label
-            >
-            <label for="autoRadio2"
-              ><input
-                type="radio"
-                id="autoRadio2"
-                name="autoDiscountType1"
-                value="amount"
-              />Amount</label
-            >
-          </div>
-        </div>
-
-        <!-- Percentage Basis Fields -->
-        <div class="form-group1" id="percentageFields" style="display: none">
-          <label1 for="maxValue1">Max Approve Value (Amount)</label1>
-          <input
-            type="text"
-            id="maxValue1"
-            placeholder="Enter max value in amount"
-          />
-
+          <!-- Discount Section -->
+          <h22>Discounts</h22>
           <div class="form-group1">
-            <input type="checkbox" id="minPurchaseCheckbox1" />
-            <label1 for="minPurchaseValue1">Minimum Purchase Value</label1>
+            <label1 for="discountCode1">Discount Code</label1>
             <input
               type="text"
-              id="minPurchaseValue1"
-              placeholder="Enter minimum purchase value"
-              disabled
+              id="discountCode1"
+              placeholder="Enter discount code"
             />
           </div>
-          <div class="form-group1">
-            <label1 for="percent">Percentage %</label1>
-            <input
-              type="text"
-              id="percent"
-              placeholder="Enter the percentage"
-            />
-          </div>
-        </div>
-
-        <!-- Amount Basis Fields -->
-        <div class="form-group1" id="amountFields" style="display: none">
-          <label1 for="amountDiscount1">Discount Amount</label1>
-          <input
-            type="text"
-            id="amountDiscount1"
-            placeholder="Enter discount amount"
-          />
 
           <div class="form-group1">
-            <input type="checkbox" id="minPurchaseCheckbox2" />
-            <label1 for="minPurchaseValue2">Minimum Purchase Value</label1>
+            <label1 for="productSelection1">Product Selection</label1>
+            <select id="productSelection1">
+              <option>Select a product</option>
+              <option>Electronics</option>
+            </select>
+          </div>
+
+          <div class="form-group1">
+            <label1 for="amountValue1">Amount Value</label1>
             <input
               type="text"
-              id="minPurchaseValue2"
-              placeholder="Enter minimum purchase value"
-              disabled
+              id="amountValue1"
+              placeholder="Enter amount value"
             />
           </div>
-          <!-- <div class="form-group1">
+
+          <div class="form-group1">
+            <button type="button" onclick="generateCoupon()">
+              Generate Coupon Code
+            </button>
+          </div>
+
+          <div class="form-group1">
+            <label1 for="validityFrom1">Validity Date (From)</label1>
+            <input type="date" id="validityFrom1" />
+            <label1 for="validityTo1">To</label1>
+            <input type="date" id="validityTo1" />
+          </div>
+
+          <div class="form-group1">
+            <label1 for="startTime1">Start Time</label1>
+            <input type="time" id="startTime1" />
+            <label1 for="endTime1">End Time</label1>
+            <input type="time" id="endTime1" />
+          </div>
+
+          <!-- Automatic Discount Section -->
+          <h22>Automatic Discount</h22>
+          <div class="form-group1">
+            <label1>Discount Type</label1>
+            <div class="radio-group1">
+              <label for="autoRadio1"
+                ><input
+                  type="radio"
+                  id="autoRadio1"
+                  name="autoDiscountType1"
+                  value="percentage"
+                />Percentage</label
+              >
+              <label for="autoRadio2"
+                ><input
+                  type="radio"
+                  id="autoRadio2"
+                  name="autoDiscountType1"
+                  value="amount"
+                />Amount</label
+              >
+            </div>
+          </div>
+
+          <!-- Percentage Basis Fields -->
+          <div class="form-group1" id="percentageFields" style="display: none">
+            <label1 for="maxValue1">Max Approve Value (Amount)</label1>
+            <input
+              type="text"
+              id="maxValue1"
+              placeholder="Enter max value in amount"
+            />
+
+            <div class="form-group1">
+              <input type="checkbox" id="minPurchaseCheckbox1" />
+              <label1 for="minPurchaseValue1">Minimum Purchase Value</label1>
+              <input
+                type="text"
+                id="minPurchaseValue1"
+                placeholder="Enter minimum purchase value"
+                disabled
+              />
+            </div>
+            <div class="form-group1">
+              <label1 for="percent">Percentage %</label1>
+              <input
+                type="text"
+                id="percent"
+                placeholder="Enter the percentage"
+              />
+            </div>
+          </div>
+
+          <!-- Amount Basis Fields -->
+          <div class="form-group1" id="amountFields" style="display: none">
+            <label1 for="amountDiscount1">Discount Amount</label1>
+            <input
+              type="text"
+              id="amountDiscount1"
+              placeholder="Enter discount amount"
+            />
+
+            <div class="form-group1">
+              <input type="checkbox" id="minPurchaseCheckbox2" />
+              <label1 for="minPurchaseValue2">Minimum Purchase Value</label1>
+              <input
+                type="text"
+                id="minPurchaseValue2"
+                placeholder="Enter minimum purchase value"
+                disabled
+              />
+            </div>
+            <!-- <div class="form-group1">
             <label1 for="amt">Amount </label1>
             <input type="text" id="amt" placeholder="Enter the Amount" />
           </div> -->
-        </div>
+          </div>
 
-        <div class="form-group1">
-          <button type="button" onclick="generateAutoCoupon()">
-            Generate Coupon
-          </button>
-        </div>
+          <div class="form-group1">
+            <button type="button" onclick="generateAutoCoupon()">
+              Generate Coupon
+            </button>
+          </div>
 
-        <div class="form-group1">
-          <label1 for="autoValidityFrom1">Validity Date (From)</label1>
-          <input type="date" id="autoValidityFrom1" />
-          <label1 for="autoValidityTo1">To</label1>
-          <input type="date" id="autoValidityTo1" />
-        </div>
+          <div class="form-group1">
+            <label1 for="autoValidityFrom1">Validity Date (From)</label1>
+            <input type="date" id="autoValidityFrom1" />
+            <label1 for="autoValidityTo1">To</label1>
+            <input type="date" id="autoValidityTo1" />
+          </div>
 
-        <div class="form-group1">
-          <label1 for="autoStartTime1">Start Time</label1>
-          <input type="time" id="autoStartTime1" />
-          <label1 for="autoEndTime1">End Time</label1>
-          <input type="time" id="autoEndTime1" />
-        </div>
+          <div class="form-group1">
+            <label1 for="autoStartTime1">Start Time</label1>
+            <input type="time" id="autoStartTime1" />
+            <label1 for="autoEndTime1">End Time</label1>
+            <input type="time" id="autoEndTime1" />
+          </div>
 
-        <!-- Save and Cancel buttons -->
-        <div class="form-actions1">
-          <button type="submit" class="save1">Save changes</button>
-          <button type="button" class="cancel1">Cancel</button>
-        </div>
-      </form>
+          <!-- Save and Cancel buttons -->
+          <div class="form-actions1">
+            <button type="submit" class="save1">Save changes</button>
+            <button type="button" class="cancel1">Cancel</button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <script>
